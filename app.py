@@ -28,6 +28,7 @@ app.config.update(
 _SETTINGS_ENV_VAR = 'MTAPI_SETTINGS'
 _SETTINGS_DEFAULT_PATH = './settings.cfg'
 if os.environ.get('DEPLOYMENT_ENV', "") == "HEROKU_PROD":
+    print(os.environ)
     app.config.update(
         MAX_TRAINS=os.environ['MAX_TRAINS'],
         MAX_MINUTES=os.environ['MAX_MINUTES'],
