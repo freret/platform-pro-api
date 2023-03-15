@@ -263,7 +263,7 @@ class Mtapi(object):
             second["activePeriod"] = [dict([a, int(x)] for a, x in b.items()) for b in second["activePeriod"]]
             second["mercuryAlert"]["createdAt"] = int(second["mercuryAlert"]["createdAt"])
             second["mercuryAlert"]["updatedAt"] = int(second["mercuryAlert"]["updatedAt"])
-            second["mercuryAlert"]["displayBeforeActive"] = int(second["mercuryAlert"]["displayBeforeActive"])
+            second["mercuryAlert"]["displayBeforeActive"] = int(second["mercuryAlert"].get("displayBeforeActive", 0))
             return second
         
         with self._read_lock:    
